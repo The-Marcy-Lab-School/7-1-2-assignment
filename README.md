@@ -2,30 +2,60 @@
 
 You are the commander of an intergalatic robot army. You need an app that will allow you to see and orgnize the members of your army. You will practice using React Router to build a multi-page, front-end UI.
 
-- [App Overview](#app-overview)
-  - [Features:](#features)
+![demo](./images/demo.gif)
+
+**Table of Contents**:
+- [Short Responses](#short-responses)
+- [Technical Checklist](#technical-checklist)
+- [Features:](#features)
 - [Set Up](#set-up)
 - [Starter Code](#starter-code)
   - [Context Provider](#context-provider)
   - [React Router](#react-router)
   - [Semantic CSS](#semantic-css)
-- [Technical Checklist](#technical-checklist)
 - [Challenge](#challenge)
 
-## App Overview
+## Short Responses
 
-You'll be building the following project:
+Getting tired of this message yet? Do them first!
 
-![demo](./images/demo.gif)
+## Technical Checklist
 
-### Features:
+There are 14 tasks to complete and 1 bonus.
+
+Your goal is to meet at least 75% of these requirements to complete the assignment. But don't stop there! Shoot for 100%!
+
+**Functionality**
+- [ ] Navigating to `/` renders the `BotsPage`
+- [ ] Clicking on a robot navigates the user to `/robots:/id` where `:id` is the id of the clicked robot.
+- [ ] Navigating to `/robots/:id` renders the `BotSpecsPage`
+- [ ] The `BotSpecsPage` renders the robot whose `id` matches the `:id` portion of the URL
+- [ ] Navigating to any other URL renders the `NotFoundPage` component
+- [ ] Wherever the `GoHomeButton` component is rendered, clicking on the button navigates the user back to the `/` page.
+
+**React Fundamentals**
+- [ ] Uses `BrowserRouter` in `main.jsx` to provide routing to the entire `App`
+- [ ] Uses `Routes` in `App.jsx` to render multiple Routes
+- [ ] Uses `Route` to render a component based on the URL
+- [ ] Uses `Link` to render a component that redirects the user upon click
+- [ ] Uses `useParams` to get parts of dynamic URL
+- [ ] Uses `useNavigate` to programmatically redirect the user
+
+**Miscellaneous**
+- [ ] Props are extracted in child components using destructuring
+- [ ] At no point did you ever use any vanilla DOM JS methods (e.g. `document.querySelector` or `document.createElement`)
+- [ ] Bonus: Your project has some extra CSS styling!
+
+When you are finished, push your code up to Github and submit on Canvas.
+
+## Features:
+
+**The first two of these features are already implemented.** The last two features are not. That's where you come in! 
 
 1. On load of the path `/`, you will make a `GET` fetch to an API and display all 50 robots on the page via the `BotsPage` component.
 2. You should be able to filter the robots on the `/` page by `bot_class`, either Assault, Defender, or Support.
 3. Clicking on a bot should change the URL path to `/robots/:id` and display a single robot via the `BotSpecsPage` component.
 4. If the user types in any URL other than `/` or `/robots/:id`, a "Page Not Found" page is rendered via the `NotFoundPage` component.
-
-The first two of these features are already implemented. The last two features are not. That's where you come in! 
 
 You will need to utilize the following components and hooks from ReactRouter to complete these features:
 - `BrowserRouter`
@@ -88,19 +118,6 @@ Take a look at the `index.html` file and you'll see a link to include Semantic U
 ```
 
 _[Learn more about Semantic UI here](https://semantic-ui.com/)_
-
-## Technical Checklist
-
-Did you complete all of the features? Test out your app!
-
-- [ ] Navigating to `/` renders the `BotsPage`
-- [ ] Clicking on a robot navigates the user to `/robots:/id` where `:id` is the id of the clicked robot.
-- [ ] Navigating to `/robots/:id` renders the `BotSpecsPage`
-- [ ] The `BotSpecsPage` renders the robot whose `id` matches the `:id` portion of the URL
-- [ ] Navigating to any other URL renders the `NotFoundPage` component
-- [ ] Wherever the `GoHomeButton` component is rendered, clicking on the button navigates the user back to the `/` page.
-
-When you are finished, push your code up to Github and submit on Canvas.
 
 ## Challenge
 
