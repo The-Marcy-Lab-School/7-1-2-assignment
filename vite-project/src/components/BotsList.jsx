@@ -12,8 +12,7 @@ const BotsList = ({ botTypeFilter }) => {
     return (
         <div className="ui centered cards">
             {
-                robots
-                    .filter(robot => !botTypeFilter || robot.bot_class === botTypeFilter)
+                robots?.filter(robot => !botTypeFilter || robot.bot_class === botTypeFilter)
                     .map(robot => { return <BotCard key={robot.id} bot={robot} /> })
             }
         </div>

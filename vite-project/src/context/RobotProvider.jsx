@@ -4,12 +4,13 @@ import { handleFetch } from '../utils'
 
 const RobotProvider = ({ children }) => {
     const [robots, setRobots] = useState([])
+    const [error, setError] = useState('')
 
     useEffect(() => {
         const doFetch = async () => {
             const [data, error] = await handleFetch('http://localhost:4000/robots');
-            if (error) return;
-            setRobots(data);
+            if (data) setRobots(data);
+            if (error) setError(error);
         }
         doFetch();
     }, [])
