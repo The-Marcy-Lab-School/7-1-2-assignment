@@ -1,22 +1,22 @@
+const BotClassIcon = (bot_class) => {
+  switch (bot_class) {
+    case "Assault":
+      return <i className="icon military" />;
+    case "Defender":
+      return <i className="icon shield" />;
+    case "Support":
+      return <i className="icon ambulance" />;
+    default:
+      return <div />;
+  }
+}
+
 // TODO:
 // - Update the onClick handler such that clicking on a bot card will 
 // navigate the user to /robots/:id where :id is the id of the current bot
 // - Do NOT use a <Link> component to accomplish this
 
 const BotCard = ({ bot }) => {
-
-  const botClassIcon = (bot_class) => {
-    switch (bot_class) {
-      case "Assault":
-        return <i className="icon military" />;
-      case "Defender":
-        return <i className="icon shield" />;
-      case "Support":
-        return <i className="icon ambulance" />;
-      default:
-        return <div />;
-    }
-  }
 
   const handleClick = () => {
     console.log(`take me to robot ${robot.id}`);
@@ -29,7 +29,7 @@ const BotCard = ({ bot }) => {
       </div>
       <div className="content">
         <div className="header">
-          {bot.name} {botClassIcon(bot.bot_class)}
+          {bot.name} {BotClassIcon(bot.bot_class)}
         </div>
 
         <div className="meta">
