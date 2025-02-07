@@ -19,7 +19,7 @@ const BotClassIcon = (bot_class) => {
 const BotCard = ({ bot }) => {
 
   const handleClick = () => {
-    console.log(`take me to robot ${robot.id}`);
+    console.log(`take me to robot ${bot.id}`);
   }
 
   return (
