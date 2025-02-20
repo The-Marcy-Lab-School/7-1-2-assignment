@@ -1,33 +1,28 @@
+// This component is shown at /robots/${id}
 // TODO: 
-// - Pull the id from the url params list to render the correct bot
-// - If there are no robots, navigate the user back to the home page "/"
+// 1. pull the id value from the URL
+// 2. make state for fetching the robot (and the error)
+// 3. use the getRobotById adapter in useEffect, re-fetching each time the id changes
+// 4. Update the rendered component to include the fetched robot's data
+//     - img alt
+//     - img src
+//     - name
+//     - catchphrase
+//     - robot class ("Assault", "Defender", or "Support")
+//     - robot class Icon
+//     - health
+//     - damage
+//     - armor
+// 5. if an error occurs, render <CouldNotLoadData /> instead
+// 6. if no robot is found, render <NotFoundPage /> instead
 
-import { useContext } from 'react';
-import RobotContext from '../context/RobotContext';
 import NotFoundPage from '../pages/NotFoundPage';
+import CouldNotLoadData from './CouldNotLoadData';
+import BotClassIcon from './BotClassIcon';
+import { getRobotById } from '../adapters/robotAdapters';
+import { useState, useEffect } from 'react';
 
 const BotSpecs = () => {
-  const { robots } = useContext(RobotContext);
-
-  // TIP: remember that the `id` from the URL is a string
-  // here we are hard-coding the id. How can you get it from the URL?
-
-  const id = 1
-  const bot = robots.find((robot) => robot.id === id)
-  if (!bot) return <NotFoundPage />
-
-  const botClassIcon = (bot_class) => {
-    switch (bot_class) {
-      case "Assault":
-        return <i className="icon military" />;
-      case "Defender":
-        return <i className="icon shield" />;
-      case "Support":
-        return <i className="icon ambulance" />;
-      default:
-        return <div />;
-    }
-  }
 
   return (
     <div className="ui segment">
@@ -35,19 +30,19 @@ const BotSpecs = () => {
         <div className="row">
           <div className="four wide column">
             <img
-              alt={bot.name}
+              alt="Robot Name"
               className="ui medium circular image bordered"
-              src={bot.avatar_url}
+              src="Robot Avatar"
             />
           </div>
           <div className="four wide column">
-            <h2>Name: {bot.name}</h2>
+            <h2>Name: Robot Name</h2>
             <p>
               <strong>Catchphrase: </strong>
-              {bot.catchphrase}
+              Robot Catchphrase
             </p>
             <strong>
-              Class: {bot.bot_class} {botClassIcon(bot.bot_class)}
+              Class: Assault {BotClassIcon("Assault")}
             </strong>
             <br />
             <div className="ui segment">
@@ -55,15 +50,15 @@ const BotSpecs = () => {
                 <div className="row">
                   <div className="column">
                     <i className="icon large circular red heartbeat" />
-                    <strong>{bot.health}</strong>
+                    <strong>Robot Health</strong>
                   </div>
                   <div className="column">
                     <i className="icon large circular yellow lightning" />
-                    <strong>{bot.damage}</strong>
+                    <strong>Robot Damage</strong>
                   </div>
                   <div className="column">
                     <i className="icon large circular blue shield" />
-                    <strong>{bot.armor}</strong>
+                    <strong>Robot Armor</strong>
                   </div>
                 </div>
               </div>
