@@ -46,14 +46,21 @@ You will need to utilize the following components and hooks from ReactRouter to 
 
 ### Set Up
 
-Make sure you `cd` into the `vite-project` directory and split your terminal into two:
+For guidance on setting up and submitting this assignment, refer to the Marcy lab School Docs How-To guide for [Working with Short Response and Coding Assignments](https://marcylabschool.gitbook.io/marcy-lab-school-docs/fullstack-curriculum/how-tos/working-with-assignments#how-to-work-on-assignments).
+
+After cloning your repository, make sure to create a `draft` branch:
+
+```
+git checkout -b draft
+```
+
+Then, `cd` into the `vite-project` directory and split your terminal into two:
 
 ![](./images/split-terminal.gif)
 
 In one terminal, run `npm install` to set up dependencies. Then run `npm start` to start the React App. This is your Front-End.
 
 In the second terminal, run `npm run json-server`. This will turn the `db.json` file containing robot data into a working API with CRUD functionality.
-
 
 **<details><summary>If you get an error</summary>**
 > If you get an error, make sure you have JSON server installed globally by running `npm install -g json-server`. Now, you will have a RESTful API that you can access via the URL `http://localhost:4000/robots`.
