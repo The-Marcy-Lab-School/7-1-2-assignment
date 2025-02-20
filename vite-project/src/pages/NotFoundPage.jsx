@@ -4,7 +4,7 @@ is made up of components. A page simply organizes the
 components, using props to pass down shared state.
 */
 
-import GoHomeButton from "../components/GoHomeButton-solution";
+import GoHomeButton from "../components/GoHomeButton";
 
 const NotFoundPage = () => {
   return (

@@ -7,10 +7,10 @@ import CouldNotLoadData from './CouldNotLoadData';
 import BotClassIcon from './BotClassIcon';
 import { getRobotById } from '../adapters/robotAdapters';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 
 const BotSpecs = () => {
-  const { id } = useParams();
+  // TIP: remember that the `id` from the URL is a string
+  const id = '???'
 
   const [robot, setRobot] = useState([])
   const [error, setError] = useState('')

@@ -5,9 +5,6 @@ import { getAllRobots } from '../adapters/robotAdapters';
 import CouldNotLoadData from './CouldNotLoadData';
 
 const BotsList = ({ botTypeFilter }) => {
-    // a robot passes the filter if:
-    // - the robot class matches the filter
-    // - there is no filter OR
     const [robots, setRobots] = useState([])
     const [error, setError] = useState('')
 
@@ -22,6 +19,9 @@ const BotsList = ({ botTypeFilter }) => {
 
     if (error || !robots) return <CouldNotLoadData />;
 
+    // a robot passes the filter if:
+    // - the robot class matches the filter
+    // - there is no filter OR
     const isInFilter = (robot) => robot.bot_class === botTypeFilter || !botTypeFilter;
     const robotToBotCard = (robot) => { return <BotCard key={robot.id} robot={robot} /> }
 
