@@ -5,7 +5,6 @@
 
 import BotClassIcon from './BotClassIcon';
 
-
 const BotCard = ({ robot }) => {
   const handleClick = () => {
     console.log(`take me to robot ${robot.id}`);
